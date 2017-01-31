@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default class Explore extends Component {
 
@@ -30,11 +31,9 @@ export default class Explore extends Component {
         <footer className='explore-footer'>
           <nav>
             <ul>
-              <li><a href='explore.html' className='active'><i className='fa fa-compass fa-2x' aria-hidden='true' /></a></li>
-              <li><a href='flights.html'><i className='fa fa-plane fa-2x' aria-hidden='true' /></a></li>
-              <li><a href='hotels.html'><i className='fa fa-bed fa-2x' aria-hidden='true' /></a></li>
-              <li><a href='trips.html'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></a></li>
-              <li><a href='profile.html'><i className='fa fa-user fa-2x' aria-hidden='true' /></a></li>
+              <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/newItenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
             </ul>
           </nav>
         </footer>

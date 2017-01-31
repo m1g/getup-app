@@ -5,13 +5,6 @@ import App from './components/App'
 
 import './styles/screen.scss'
 
-export App from './App'
-export Layout from './Layout'
-export Explore from './Explore'
-export Login from './Login'
-export NewItenerary from './NewItenerary'
-export Profile from './Profile'
-
 const root = document.getElementById('root')
 
 const render = (app) => {
