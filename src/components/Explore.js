@@ -33,9 +33,9 @@ export default class Explore extends Component {
         <footer className='explore-footer'>
           <nav>
             <ul>
-              <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' />Explore</Link></li>
-              <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' />Itenerary</Link></li>
-              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' />Profile</Link></li>
+              <li><Link activeClassName='is-active' to='/explore' onlyActiveOnIndex><i className='fa fa-compass fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
             </ul>
           </nav>
         </footer>

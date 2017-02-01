@@ -5,6 +5,7 @@ $base-font-family: 'helvetica', sans-serif;
 $input-font-size: 0.95em;
 $input-padding: 10px;
 $base-color: #15bb67;
+$cancel: #af1128;
 
 html {
   text-size-adjust: 100%;
@@ -33,3 +34,4 @@ html {
 @import 'explore';
 @import 'itenerary';
 @import 'profile';
+@import 'modal';

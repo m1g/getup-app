@@ -5,16 +5,16 @@ export default class Profile extends Component {
 
   render () {
     return (
-      <div>
+      <div className='profile-background'>
         <header className='profile-header'>
           <h2>Profile</h2>
         </header>
         <footer className='profile-footer'>
           <nav>
             <ul>
-              <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' />Explore</Link></li>
-              <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' />Itenerary</Link></li>
-              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' />Profile</Link></li>
+              <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
             </ul>
           </nav>
         </footer>

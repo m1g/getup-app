@@ -1,5 +1,10 @@
 @import 'utility';
 
+.itenerary-background {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/ignasi_pattern_s.png');
+  min-height: 100vh;
+}
+
 .itenerary-header {
   display: flex;
   justify-content: center;
@@ -34,12 +39,55 @@
 }
 
 .itenerary-section {
-  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/ignasi_pattern_s.png');
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.5em;
   flex: 1;
+
+  button {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 0;
+    font-size: $input-font-size;
+    text-decoration: none;
+    font-family: $base-font-family;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    background-color: $base-color;
+  }
+
+  p {
+    margin: 0 0 1em;
+    color: #777;
+  }
+
+  input {
+    font-family: $base-font-family;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    color: #777;
+    text-align: center;
+    width: 90%;
+    margin: 0 0 1em;
+    border-color: lightgrey;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .itenerary-create {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    p {
+      margin-top: 15px;
+    }
+  }
 }
 
 .itenerary-footer {

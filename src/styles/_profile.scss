@@ -1,5 +1,10 @@
 @import 'utility';
 
+.profile-background {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/ignasi_pattern_s.png');
+  min-height: 100vh;
+}
+
 .profile-header {
   display: flex;
   justify-content: center;
