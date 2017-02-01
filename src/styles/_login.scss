@@ -99,15 +99,9 @@ main {
     border-radius: 15px;
     padding: 10px 20px;
     margin: 0 5px;
-
-    a:link,
-    a:visited {
-      font-family: $base-font-family;
-      font-size: 1.25em;
-      color: white;
-      padding-left: 10px;
-      text-decoration: none;
-    }
+    text-decoration: none;
+    font-family: $base-font-family;
+    outline: none;
   }
 
   .twitter {

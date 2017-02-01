@@ -1,0 +1,53 @@
+@import 'utility';
+
+.profile-header {
+  display: flex;
+  justify-content: center;
+  font-family: $base-font-family;
+  padding: 10px 0;
+  width: 100%;
+  background-color: $base-color;
+  color: white;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.profile-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: $base-color;
+  border-top: 1px solid lightgrey;
+
+  nav {
+    margin: 0 20px;
+
+    a:link,
+    a:visited {
+      color: #11402d;
+    }
+
+    a:active {
+      color: white;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    color: white;
+
+    li {
+      margin: 0;
+    }
+  }
+}

@@ -11,8 +11,9 @@
 
   input {
     font-family: $base-font-family;
-    font-size: 0.85em;
-    padding: 10px;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    color: #777;
     text-align: center;
     min-width: 300px;
     border-radius: 10px;
@@ -47,12 +48,13 @@
 }
 
 .explore-section {
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/ignasi_pattern_s.png");
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   flex: 1;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 
   div {
     height: 220px;

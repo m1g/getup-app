@@ -2,10 +2,13 @@
 
 $base-text-size: 16px;
 $base-font-family: 'helvetica', sans-serif;
+$input-font-size: 0.95em;
+$input-padding: 10px;
 $base-color: #15bb67;
 
 html {
   text-size-adjust: 100%;
+  height: 100vh;
 }
 
 body {
@@ -19,7 +22,14 @@ body {
   align-items: center;
 }
 
+body,
+#root,
+html {
+  min-height: 100vh;
+  width: 100vw;
+}
+
 @import 'login';
 @import 'explore';
-@import 'newItenerary';
-// @import 'profile';
+@import 'itenerary';
+@import 'profile';
