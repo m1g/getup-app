@@ -14,7 +14,6 @@ export default class Itenerary extends Component {
           <h2>My Trip Name</h2>
         </header>
         <section className='itenerary-section'>
-
           <div className='itenerary-create'>
             <button type='submit' onClick={this._clickAddItem}>Add Line Item</button>
           </div>

@@ -9,6 +9,9 @@ import IteneraryList from './IteneraryList'
 import Profile from './Profile'
 import Login from './Login'
 import NewIteneraryItem from './NewIteneraryItem'
+import ExtraCosts from './ExtraCosts'
+import Flights from './Flights'
+import Hotels from './Hotels'
 
 export default class App extends Component {
 
@@ -24,6 +27,9 @@ export default class App extends Component {
         <IndexRoute component={Login} />
         <Route path='explore' component={Explore} />
         <Route path='itenerary' component={IteneraryList} />
+        <Route path='flights' component={Flights} />
+        <Route path='hotels' component={Hotels} />
+        <Route path='extracosts' component={ExtraCosts} />
         <Route path='itenerary/:id' component={Itenerary}>
           <Route path='newItem' component={NewIteneraryItem} />
         </Route>

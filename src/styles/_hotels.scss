@@ -1,0 +1,182 @@
+@import 'utility';
+
+.hotels-background {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/ignasi_pattern_s.png');
+  min-height: 100vh;
+}
+
+.hotels-header {
+  display: flex;
+  justify-content: center;
+  font-family: $base-font-family;
+  padding: 10px 0;
+  width: 100%;
+  background-color: $base-color;
+  color: white;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.hotels-wrapper {
+  padding: 1em;
+
+  h3 {
+    margin-right: 0.5em;
+    font-size: 1em;
+    color: #777;
+  }
+
+  .checkout-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+    padding: 1em 0.5em;
+    background-color: hsla(0, 0%, 0%, 0.1);
+
+    input {
+      font-family: $base-font-family;
+      font-size: $input-font-size;
+      padding: $input-padding;
+      color: #777;
+      text-align: center;
+      border: 1px solid lightgrey;
+      outline: none;
+    }
+
+    .hotel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      input {
+        width: 80%;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .hotel-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .rooms {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+
+    ::-webkit-input-placeholder {
+      color: rgba(#e2e2e2, 0.68);
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+      color: rgba(#e2e2e2, 0.68);
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+      color: rgba(#e2e2e2, 0.68);
+    }
+
+    :-ms-input-placeholder {
+      color: rgba(#e2e2e2, 0.68);
+    }
+
+    input {
+      text-align: center;
+      width: 40%;
+      padding: 10px;
+      margin: 0;
+      font-size: 2em;
+      text-decoration: none;
+      font-family: $base-font-family;
+      outline: none;
+      border: 1px solid white;
+      color: white;
+      background-color: $base-color;
+    }
+
+    .link-box {
+      display: flex;
+
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        opacity: 1;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+
+    .cancel-button {
+      padding: 10px 30px;
+      margin: 1.5em 0;
+      background-color: $cancel;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.25em;
+      outline: none;
+    }
+
+    .add-button {
+      padding: 10px 30px;
+      margin: 1.5em 0;
+      background-color: $base-color;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.25em;
+      outline: none;
+    }
+  }
+}
+
+.hotels-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: $base-color;
+  border-top: 1px solid lightgrey;
+
+  nav {
+    margin: 0 20px;
+
+    a:link,
+    a:visited {
+      color: #11402d;
+    }
+
+    a:active {
+      color: white;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    color: white;
+
+    li {
+      margin: 0;
+    }
+  }
+}
