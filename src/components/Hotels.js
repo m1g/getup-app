@@ -36,7 +36,7 @@ export default class Hotels extends Component {
           <div className='rooms'>
             <div className='link-box'>
               <h3>Number of rooms</h3>
-              <input type='number' />
+              {/* <input type='number' /> */}
             </div>
             <div>
               <input type='number' placeholder='Cost' />

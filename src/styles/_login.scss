@@ -67,16 +67,11 @@ main {
     padding: 10px 50px;
     margin: 10px 0 20px;
     background-color: $base-color;
+    font-family: $base-font-family;
+    font-size: 1.25em;
+    color: white;
     border: none;
     border-radius: 15px;
-
-    a:link,
-    a:visited {
-      font-family: $base-font-family;
-      font-size: 1.25em;
-      text-decoration: none;
-      font-weight: bolder;
-    }
   }
 }
 
@@ -102,9 +97,6 @@ main {
     text-decoration: none;
     font-family: $base-font-family;
     outline: none;
-  }
-
-  .twitter {
     background-color: #4099ff;
     color: white;
   }

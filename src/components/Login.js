@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SessionButton from './SessionButton'
 
 import videoUrl from '../media/swim-vid.mp4'
 import logoUrl from '../images/logo.png'
@@ -20,16 +21,9 @@ export default class Login extends Component {
             <form action='submit'>
               <input type='email' placeholder='Email Address' />
               <input type='password' placeholder='********' />
-              <button type='submit' name='sign-in'><a href='explore.html'>Sign In</a></button>
+              <SessionButton />
             </form>
           </section>
-          <footer className='login-footer'>
-            <p><a href='forgotpass.html'>Forgot your password?</a></p>
-            <div className='login-social'>
-              <button type='submit' name='twitter' className='twitter'><i className='fa fa-twitter fa-2x' aria-hidden='true' />Log in</button>
-              <button type='submit' name='facebook' className='facebook'><i className='fa fa-facebook fa-2x' aria-hidden='true' />Log in</button>
-            </div>
-          </footer>
         </main>
       </div>
     )

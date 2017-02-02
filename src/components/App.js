@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-// import { auth } from '../utils/AuthService'
+// import { ApolloProvider } from 'react-apollo'
 
 import Layout from './Layout'
 import Explore from './Explore'
@@ -14,12 +14,6 @@ import Flights from './Flights'
 import Hotels from './Hotels'
 
 export default class App extends Component {
-
-  // constructor (props) {
-  //   super(props)
-  //
-  //   auth.onUpdate = () => this.forceUpdate()
-  // }
 
   render () {
     return <Router history={browserHistory}>
