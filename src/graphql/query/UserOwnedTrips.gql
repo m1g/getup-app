@@ -1,0 +1,9 @@
+query UserOwnedTrips {
+  user {
+    id
+    ownedTrips {
+      id
+      name
+    }
+  }
+}

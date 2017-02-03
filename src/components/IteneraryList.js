@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 import { Link, browserHistory } from 'react-router'
+import { graphql } from 'react-apollo'
+import TripNew from './TripNew'
 
+// import withAuth from '../utils/withAuth'
+
+import UserOwnedTrips from '../graphql/query/UserOwnedTrips.gql'
+
+// @withAuth
+@graphql(UserOwnedTrips, { name: 'userOwnedTrips' })
 export default class IteneraryList extends Component {
 
-  _clickCreateList = () => {
-    browserHistory.push('/itenerary/foo-bar')
+  trips () {
+    if (this.props.userOwnedTrips.loading) {
+      return <li>Loading...</li>
+    }
+    return this.props.userOwnedTrips.user.ownedTrips.map((trip, i) => {
+      return <li key={i}>{trip.name}</li>
+    })
   }
 
   render () {
@@ -16,22 +29,10 @@ export default class IteneraryList extends Component {
         <div className='itenerary-selectors'>
           <button>List of Trips</button>
         </div>
-        <section className='itenerary-section'>
-          {/* <form onSubmit={this.handleSubmit}>
-          <label>
-            Name: Trip Name
-            <input value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type='submit' value='Submit' />
-          <input type='number' name='No. of People' />
-        </form> */}
-          <p>Enter the name of your Trip. PRO TIP: Using the name of the location will help your friends make quicker decisions</p>
-          <input type='text' placeholder='Trip Name' />
-          <div className='itenerary-create'>
-            <p><a href=''>Invite friends</a></p>
-            <button type='submit' onClick={this._clickCreateList}>Create List</button>
-          </div>
-        </section>
+        <ul>
+          {this.trips()}
+        </ul>
+        <TripNew />
         <footer className='itenerary-footer'>
           <nav>
             <ul>

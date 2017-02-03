@@ -17,12 +17,7 @@ export default class Login extends Component {
             <img src={logoUrl} alt='main logo' />
           </header>
           <section className='login-section'>
-            <p><a href='signup.html'>Don't have an account? Sign up</a></p>
-            <form action='submit'>
-              <input type='email' placeholder='Email Address' />
-              <input type='password' placeholder='********' />
-              <SessionButton />
-            </form>
+            <SessionButton />
           </section>
         </main>
       </div>

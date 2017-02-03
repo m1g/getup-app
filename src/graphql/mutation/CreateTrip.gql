@@ -1,0 +1,6 @@
+mutation CreateTrip ($ownerId: ID!, $name: String!) {
+  createTrip (ownerId: $ownerId, name: $name) {
+    id
+    name
+  }
+}
