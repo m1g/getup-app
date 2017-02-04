@@ -30,6 +30,14 @@ export default class Flights extends Component {
               <input type='date' />
             </div>
           </div>
+          <div className='flights-added'>
+            <div>
+              <h2>Flight Departing Name</h2>
+            </div>
+            <div className='flights-cost'>
+              <h2>$300</h2>
+            </div>
+          </div>
           <div className='add-another'>
             <div>
               <input type='number' placeholder='Cost' />

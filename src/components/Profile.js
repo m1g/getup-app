@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import SessionButton from './SessionButton'
 
 export default class Profile extends Component {
 
@@ -9,6 +10,7 @@ export default class Profile extends Component {
         <header className='profile-header'>
           <h2>Profile</h2>
         </header>
+        <SessionButton />
         <footer className='profile-footer'>
           <nav>
             <ul>

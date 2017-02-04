@@ -3,12 +3,11 @@ import { graphql } from 'react-apollo'
 import withAuth from '../utils/withAuth'
 import update from 'immutability-helper'
 
-import CreateTrip from '../graphql/mutation/CreateTrip.gql'
-
+import {mutationCreateTrip, queryUserOwnedTrips} from '../graphql/'
 import { browserHistory } from 'react-router'
 
 @withAuth
-@graphql(CreateTrip, { name: 'createTrip' })
+@graphql(...mutationCreateTrip())
 export default class TripNew extends Component {
 
   state = {
@@ -17,17 +16,16 @@ export default class TripNew extends Component {
 
   _createTrip = (event) => {
     event.preventDefault()
-    this.props.createTrip({
+    this.props.mutationCreateTrip({
       variables: {
         ownerId: this.props.client.userId,
         name: this.state.newTripName
       },
-      updateQueries: {
-        UserOwnedTrips: (prev, { mutationResult }) => {
-          const trip = mutationResult.data.createTrip
-          return update(prev, { user: { ownedFamilies: { $push: [trip] } } })
+      refetchQueries: [
+        {
+          query: queryUserOwnedTrips(false)
         }
-      }
+      ]
     })
     // browserHistory.push('/itenerary/foo-bar')
   }

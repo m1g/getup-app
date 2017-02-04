@@ -61,26 +61,25 @@
     }
   }
 
+  .flights-added {
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    background-color: white;
+    border: 1px solid $base-color;
+
+    .flights-cost {
+      padding: 0 1em;
+      color: white;
+      background-color: $base-color;
+    }
+  }
+
   .add-another {
     display: flex;
     align-items: center;
     margin: 1em 0;
-
-    ::-webkit-input-placeholder {
-      color: rgba(#e2e2e2, 0.68);
-    }
-
-    :-moz-placeholder { /* Firefox 18- */
-      color: rgba(#e2e2e2, 0.68);
-    }
-
-    ::-moz-placeholder {  /* Firefox 19+ */
-      color: rgba(#e2e2e2, 0.68);
-    }
-
-    :-ms-input-placeholder {
-      color: rgba(#e2e2e2, 0.68);
-    }
 
     input {
       text-align: center;
@@ -91,9 +90,9 @@
       text-decoration: none;
       font-family: $base-font-family;
       outline: none;
-      border: 1px solid white;
-      color: white;
-      background-color: $base-color;
+      border: 1px solid $base-color;
+      color: $base-color;
+      background-color: white;
     }
 
     .link-box {

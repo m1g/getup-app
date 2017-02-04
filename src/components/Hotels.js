@@ -33,10 +33,10 @@ export default class Hotels extends Component {
               </div>
             </div>
           </div>
-          <div className='rooms'>
+          <div className='hotels-rooms'>
             <div className='link-box'>
               <h3>Number of rooms</h3>
-              {/* <input type='number' /> */}
+              <input type='number' min='1' max='10' />
             </div>
             <div>
               <input type='number' placeholder='Cost' />

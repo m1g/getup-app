@@ -23,12 +23,18 @@ export default class App extends Component {
     }
   }
 
+  unAuthed = (nextState, replace) => {
+    if (this.props.auth.isSignedIn) {
+      replace({ pathname: '/explore' })
+    }
+  }
+
   render () {
     return (
       <ApolloProvider client={this.props.client.apollo}>
         <Router history={browserHistory}>
           <Route path='/' component={Layout}>
-            <IndexRoute component={Login} />
+            <IndexRoute component={Login} onEnter={this.unAuthed} />
             <Route path='explore' component={Explore} />
             <Route path='flights' component={Flights} />
             <Route path='hotels' component={Hotels} />

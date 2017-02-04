@@ -11,7 +11,7 @@ export default class Itenerary extends Component {
     return (
       <div className='itenerary-background'>
         <header className='itenerary-header'>
-          <h2>My Trip Name</h2>
+          <h2>{this.props.name}</h2>
         </header>
         <section className='itenerary-section'>
           <div className='itenerary-create'>

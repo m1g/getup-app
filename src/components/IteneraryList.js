@@ -5,18 +5,18 @@ import TripNew from './TripNew'
 
 // import withAuth from '../utils/withAuth'
 
-import UserOwnedTrips from '../graphql/query/UserOwnedTrips.gql'
+import { queryUserOwnedTrips } from '../graphql'
 
 // @withAuth
-@graphql(UserOwnedTrips, { name: 'userOwnedTrips' })
+@graphql(...queryUserOwnedTrips())
 export default class IteneraryList extends Component {
 
   trips () {
-    if (this.props.userOwnedTrips.loading) {
+    if (this.props.queryUserOwnedTrips.loading) {
       return <li>Loading...</li>
     }
-    return this.props.userOwnedTrips.user.ownedTrips.map((trip, i) => {
-      return <li key={i}>{trip.name}</li>
+    return this.props.queryUserOwnedTrips.user.ownedTrips.map((trip, i) => {
+      return <li key={i}><Link to={`/itenerary/${trip.id}`}>{trip.name}</Link></li>
     })
   }
 
