@@ -29,7 +29,17 @@ export default class IteneraryList extends Component {
         <div className='itenerary-selectors'>
           <button>List of Trips</button>
         </div>
-        <ul>
+        <ul className='itenerary-item'>
+          <li>
+            <ul>
+              <li>
+                <h2>Name of Trip</h2>
+              </li>
+              <li className='trips-cost'>
+                <h2>$300/pp</h2>
+              </li>
+            </ul>
+          </li>
           {this.trips()}
         </ul>
         <TripNew />

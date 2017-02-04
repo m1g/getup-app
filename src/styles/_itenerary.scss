@@ -38,6 +38,30 @@
   }
 }
 
+.itenerary-item {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  background-color: white;
+  border-top: 1px solid $base-color;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    list-style: none;
+    border-bottom: 1px solid $base-color;
+  }
+
+  .trips-cost {
+    padding: 0 1em;
+    color: white;
+    background-color: $base-color;
+  }
+}
+
 .itenerary-section {
   display: flex;
   flex-direction: column;
