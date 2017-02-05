@@ -1,0 +1,10 @@
+query Trip ($id: ID!) {
+  Trip(id: $id) {
+    id
+    name
+    memberships {
+      name
+      email
+    }
+  }
+}

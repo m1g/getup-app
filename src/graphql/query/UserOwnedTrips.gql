@@ -4,6 +4,11 @@ query UserOwnedTrips {
     ownedTrips {
       id
       name
+      memberships {
+        id
+        email
+        name
+      }
     }
   }
 }

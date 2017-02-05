@@ -1,0 +1,7 @@
+mutation CreatMembership ($email: String!, $name: String!, $tripId: ID!) {
+  createMembership (email: $email, name: $name, tripId: $tripId) {
+    id
+    email
+    name
+  }
+}

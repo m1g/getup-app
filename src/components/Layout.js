@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Modal from './Modal'
 
 export default class Layout extends Component {
 
@@ -6,6 +7,7 @@ export default class Layout extends Component {
     return (
       <div>
         {this.props.children}
+        <Modal />
       </div>
     )
   }

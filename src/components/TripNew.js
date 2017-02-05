@@ -41,7 +41,6 @@ export default class TripNew extends Component {
           <p>Enter the name of your Trip. PRO TIP: Using the name of the location will help your friends make quicker decisions</p>
           <input value={this.state.newTripName} onChange={this._newTripChange} type='text' placeholder='Trip Name' />
           <div className='itenerary-create'>
-            <p><a href=''>Invite friends</a></p>
             <button type='submit'>Create Trip</button>
           </div>
         </form>

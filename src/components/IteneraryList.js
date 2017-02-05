@@ -13,10 +13,25 @@ export default class IteneraryList extends Component {
 
   trips () {
     if (this.props.queryUserOwnedTrips.loading) {
-      return <li>Loading...</li>
+      return (
+        <ul>
+          <li>Loading...</li>
+        </ul>
+      )
     }
     return this.props.queryUserOwnedTrips.user.ownedTrips.map((trip, i) => {
-      return <li key={i}><Link to={`/itenerary/${trip.id}`}>{trip.name}</Link></li>
+      return (
+        <li key={i}>
+          <div className='info'>
+            <h2><Link to={`/itenerary/${trip.id}`}>{trip.name}</Link></h2>
+
+          </div>
+          <div className='trips-cost'>
+            <h2>$300/p</h2>
+            <p>({trip.memberships.length} invited)</p>
+          </div>
+        </li>
+      )
     })
   }
 
@@ -32,15 +47,9 @@ export default class IteneraryList extends Component {
         <ul className='itenerary-item'>
           <li>
             <ul>
-              <li>
-                <h2>Name of Trip</h2>
-              </li>
-              <li className='trips-cost'>
-                <h2>$300/pp</h2>
-              </li>
+              {this.trips()}
             </ul>
           </li>
-          {this.trips()}
         </ul>
         <TripNew />
         <footer className='itenerary-footer'>

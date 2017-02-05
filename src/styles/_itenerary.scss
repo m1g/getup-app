@@ -45,18 +45,49 @@
   padding-left: 0;
   margin: 0;
   background-color: white;
-  border-top: 1px solid $base-color;
 
   ul {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 1em;
     list-style: none;
-    border-bottom: 1px solid $base-color;
+    padding-left: 0;
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: $base-color;
+    }
+
+    li {
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        padding: 0.5em;
+        border-bottom: 1px solid $base-color;
+        flex: 1;
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      display: flex;
+      color: #777;
+    }
   }
 
   .trips-cost {
-    padding: 0 1em;
+    h2,
+    p {
+      margin: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    padding: 0.5em;
     color: white;
     background-color: $base-color;
   }
@@ -68,6 +99,12 @@
   align-items: center;
   padding: 1.5em;
   flex: 1;
+
+  .itenerary-friends {
+    background-color: white;
+    color: $base-color;
+    border: 1px solid $base-color;
+  }
 
   button {
     width: 50%;
