@@ -44,10 +44,10 @@ export default class Hotels extends Component {
           </div>
           <div className='list'>
             <div>
-              <button className='cancel-button'>Cancel</button>
+              <button className='cancel-button'><Link to='/itenerary'>Cancel</Link></button>
             </div>
             <div>
-              <button className='add-button'>Add to List</button>
+              <button className='add-button'><Link to='/itenerary'>Add to List</Link></button>
             </div>
           </div>
         </div>

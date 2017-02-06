@@ -33,15 +33,11 @@ class InviteFriends extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  // _addMember = (event) => {
-  //   event.preventDefault()
-  // }
-
   render () {
     return (
       <div>
-        <h3>Add a Friend</h3>
         <form onSubmit={this._addMember}>
+          <h3>Add a Friend</h3>
           <input
             type='text'
             value={this.state.newMemberName}

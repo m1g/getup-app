@@ -12,7 +12,9 @@ class Modal extends Component {
       return <div className='modal'>
         <div className='inner'>
           <header>
-            <button onClick={this._dismiss}>Close</button>
+            <button className='close-button' onClick={this._dismiss}>
+              <i className='fa fa-times fa-2x' aria-hidden='true' />
+            </button>
           </header>
           <div className='content'>
             {ui.modal}

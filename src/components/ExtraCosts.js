@@ -15,19 +15,18 @@ export default class ExtraCosts extends Component {
               <input type='text' className='name' placeholder='Name of Cost' />
               <input type='number' placeholder='Price' />
             </div>
-            <p><a href='#'>Add an additional cost</a></p>
           </div>
-          <div className='costs-rooms'>
+          {/* <div className='costs-rooms'>
             <div>
-              <input type='number' placeholder='Total Cost' />
+              <input type='number' placeholder='Cost' />
             </div>
-          </div>
+          </div> */}
           <div className='list'>
             <div>
-              <button className='cancel-button'>Cancel</button>
+              <button className='cancel-button'><Link to='/itenerary'>Cancel</Link></button>
             </div>
             <div>
-              <button className='add-button'>Add to List</button>
+              <button className='add-button'><Link to='/itenerary'>Add to List</Link></button>
             </div>
           </div>
         </div>

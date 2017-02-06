@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 export default class NewItenerary extends Component {
 
@@ -9,15 +9,23 @@ export default class NewItenerary extends Component {
 
   render () {
     return <div className='modal'>
-      <div className='inner'>
-        <ul>
-          <li><h2>Flights</h2></li>
-          <li><h2>Hotels</h2></li>
-          <li><h2>Extra Costs</h2></li>
+      <div className='item-inner'>
+        <div>
+          <button onClick={this._dismissModal}>
+            <i className='fa fa-times fa-2x' aria-hidden='true' />
+          </button>
+        </div>
+        <ul className='content'>
+          <li>
+            <Link to='/flights'><h2>Flights</h2></Link>
+          </li>
+          <li>
+            <Link to='/hotels'><h2>Hotels</h2></Link>
+          </li>
+          <li>
+            <Link to='/extracosts'><h2>Extra Costs</h2></Link>
+          </li>
         </ul>
-      </div>
-      <div>
-        <button onClick={this._dismissModal}>Cancel</button>
       </div>
     </div>
   }

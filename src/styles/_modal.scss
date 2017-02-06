@@ -12,10 +12,69 @@
   z-index: 1000;
 
   .inner {
-    // padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
+    color: white;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    width: 100vw;
+
+    .close-button {
+      width: 3em;
+      height: 3em;
+      padding: 5px;
+      margin: 1em;
+      font-size: $input-font-size;
+      text-decoration: none;
+      font-family: $base-font-family;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 50%;
+      color: $cancel;
+      background-color: white;
+    }
+
+    .content {
+      form {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin: 0;
+      }
+
+      input {
+        font-family: $base-font-family;
+        font-size: $input-font-size;
+        padding: $input-padding;
+        margin: 1em 0;
+        color: #777;
+        text-align: center;
+        border: 1px solid lightgrey;
+        outline: none;
+      }
+
+      button {
+        margin: 2em 0 3em;
+        padding: 0.75em;
+        border-radius: 15px;
+        font-size: $input-font-size;
+        font-family: $base-font-family;
+        outline: none;
+        border: none;
+        color: white;
+        background-color: $base-color;
+      }
+    }
+  }
+
+  .item-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     color: white;
     background-color: hsla(0, 0%, 0%, 0.7);
     width: 100vw;
@@ -23,13 +82,18 @@
     ul {
       display: flex;
       flex-direction: column;
-      // justify-content: space-between;
       align-items: center;
       list-style: none;
       padding-left: 0;
       width: 100vw;
       border-bottom: 1px solid $base-color;
       margin: 0;
+
+      a:link,
+      a:visited {
+        color: white;
+        text-decoration: none;
+      }
 
       li {
         text-align: center;
@@ -38,17 +102,20 @@
         padding: 1em 0;
       }
     }
-  }
 
-  button {
-    padding: 10px 30px;
-    margin: 1.5em 0;
-    background-color: $cancel;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 1.25em;
-    outline: none;
+    button {
+      width: 3em;
+      height: 3em;
+      padding: 5px;
+      margin: 1em;
+      font-size: $input-font-size;
+      text-decoration: none;
+      font-family: $base-font-family;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 50%;
+      color: $cancel;
+      background-color: white;
+    }
   }
 }

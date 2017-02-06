@@ -33,7 +33,7 @@ export default class Itenerary extends Component {
     if (loading) return <li>Loading...</li>
     return Trip.memberships.map((member, i) => {
       return <li key={i}>
-        {member.name} / {member.email}
+        {member.name}, {member.email}
       </li>
     })
   }
@@ -50,11 +50,15 @@ export default class Itenerary extends Component {
             <button type='submit' onClick={this._clickAddItem}>Add Line Item</button>
           </div>
         </section>
-        <section>
-          <h4>Members</h4>
+        <section className='itenerary-members'>
+          <h4>Invited</h4>
           <ul>
             {this.members()}
           </ul>
+          {/*
+          This will add list items to the itenerary
+          <ul className='itenerary-items'>
+          </ul> */}
         </section>
         <footer className='itenerary-footer'>
           <nav>

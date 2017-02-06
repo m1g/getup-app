@@ -1,16 +1,49 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import {mutationCreateTrip, queryUserOwnedTrips} from '../graphql/'
+import { graphql } from 'react-apollo'
 
 import mainLogo from '../images/logo.png'
 
+@graphql(...mutationCreateTrip())
 export default class Explore extends Component {
+
+  state = {
+    newTripName: ''
+  }
+
+  _createTrip = (event) => {
+    event.preventDefault()
+    this.props.mutationCreateTrip({
+      variables: {
+        ownerId: this.props.client.userId,
+        name: this.state.newTripName
+      },
+      refetchQueries: [
+        {
+          query: queryUserOwnedTrips(false)
+        }
+      ]
+    })
+    // browserHistory.push('/itenerary/foo-bar')
+  }
+
+  _newTripChange = (event) => {
+    this.setState({ newTripName: event.target.value })
+  }
 
   render () {
     return (
       <div>
         <header className='explore-header'>
           <img src={mainLogo} alt='main logo' />
-          <input type='text' placeholder='Where to get up' />
+          <input
+            value={this.state.newTripName}
+            onChange={this._newTripChange}
+            type='text'
+            placeholder='Enter your Trip Name'
+            onSubmit={this._createTrip}
+          />
         </header>
         <section className='explore-divider'>
           <div>

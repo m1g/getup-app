@@ -61,45 +61,6 @@
     }
   }
 
-  .flights-added {
-    color: #777;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 1em;
-    background-color: white;
-    border: 1px solid $base-color;
-
-    .flights-cost {
-      padding: 0 1em;
-      color: white;
-      background-color: $base-color;
-    }
-  }
-
-  .add-another {
-    display: flex;
-    align-items: center;
-    margin: 1em 0;
-
-    input {
-      text-align: center;
-      width: 40%;
-      padding: 10px;
-      margin: 0;
-      font-size: 2em;
-      text-decoration: none;
-      font-family: $base-font-family;
-      outline: none;
-      border: 1px solid $base-color;
-      color: $base-color;
-      background-color: white;
-    }
-
-    .link-box {
-      width: 50%;
-    }
-  }
-
   .list {
     display: flex;
     justify-content: space-between;

@@ -10,7 +10,16 @@ export default class Profile extends Component {
         <header className='profile-header'>
           <h2>Profile</h2>
         </header>
-        <SessionButton />
+        <section>
+          <img src='https://avatars.githubusercontent.com/u/8049663?v=3' alt='' />
+          <ul>
+            <li><h3>avatar name</h3></li>
+            <li>email: @personemail.com</li>
+          </ul>
+        </section>
+        <div className='profile-btn'>
+          <SessionButton />
+        </div>
         <footer className='profile-footer'>
           <nav>
             <ul>

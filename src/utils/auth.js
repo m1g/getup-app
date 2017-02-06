@@ -14,6 +14,10 @@ class Auth {
         redirectUrl: `${window.location.protocol}//${window.location.host}/`,
         responseType: 'token'
       }
+      // theme: {
+      //   logo: 'https://github.com/m1g/getup-app/blob/master/src/images/logo.png?raw=true',
+      //   primaryColor: '#2f383d'
+      // }
     }
 
     // Re-hydrate session on browser load/reload
@@ -27,13 +31,7 @@ class Auth {
         if (error) console.warn(error)
         this.profile = profile
       })
-
-      // Return to the URL they were on before authenticating.
-      const returnTo = window.localStorage.getItem('auth:returnTo')
-      if (returnTo) {
-        browserHistory.push(returnTo)
-        window.localStorage.removeItem('auth:returnTo')
-      }
+      browserHistory.push('/explore')
     })
 
     autorun(() => {
@@ -48,8 +46,6 @@ class Auth {
   }
 
   signIn () {
-    // Save the current URL so we can return to it after authenticating.
-    window.localStorage.setItem('auth:returnTo', window.location.pathname)
     this.lock.show()
   }
 

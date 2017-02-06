@@ -94,32 +94,6 @@
       outline: none;
     }
   }
-
-  .costs-rooms {
-    display: flex;
-    flex-direction: column;
-    margin: 1em 0;
-
-    .link-box {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5em;
-    }
-
-    input {
-      text-align: center;
-      width: 35%;
-      padding: 5px;
-      margin: 0;
-      font-size: 1.5em;
-      text-decoration: none;
-      font-family: $base-font-family;
-      outline: none;
-      border: 1px solid $base-color;
-      color: $base-color;
-      background-color: white;
-    }
-  }
 }
 
 .costs-footer {

@@ -7,7 +7,6 @@ import TripNew from './TripNew'
 
 import { queryUserOwnedTrips } from '../graphql'
 
-// @withAuth
 @graphql(...queryUserOwnedTrips())
 export default class IteneraryList extends Component {
 
