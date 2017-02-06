@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import {mutationCreateTrip, queryUserOwnedTrips} from '../graphql/'
 import { graphql } from 'react-apollo'
+import withAuth from '../utils/withAuth'
 
 import mainLogo from '../images/logo.png'
 
+@withAuth
 @graphql(...mutationCreateTrip())
 export default class Explore extends Component {
 
@@ -24,8 +26,9 @@ export default class Explore extends Component {
           query: queryUserOwnedTrips(false)
         }
       ]
+    }).then(({data}) => {
+      browserHistory.push(`/itenerary/${data.createTrip.id}`)
     })
-    // browserHistory.push('/itenerary/foo-bar')
   }
 
   _newTripChange = (event) => {
@@ -37,13 +40,15 @@ export default class Explore extends Component {
       <div>
         <header className='explore-header'>
           <img src={mainLogo} alt='main logo' />
-          <input
-            value={this.state.newTripName}
-            onChange={this._newTripChange}
-            type='text'
-            placeholder='Enter your Trip Name'
-            onSubmit={this._createTrip}
-          />
+          <form onSubmit={this._createTrip}>
+            <input
+              value={this.state.newTripName}
+              onChange={this._newTripChange}
+              type='text'
+              placeholder='Enter your Trip Name'
+            />
+            <button type='submit' style={{ visibility: 'hidden', position: 'absolute' }}>GO</button>
+          </form>
         </header>
         <section className='explore-divider'>
           <div>

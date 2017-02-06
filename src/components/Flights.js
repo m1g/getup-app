@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import AddLineItem from './AddLineItem'
 
 export default class Flights extends Component {
 
@@ -9,36 +10,7 @@ export default class Flights extends Component {
         <header className='flights-header'>
           <h2>Flights</h2>
         </header>
-        <div className='flights-wrapper'>
-          <div className='depart-return'>
-            <div className='airport'>
-              <input type='text' placeholder='Departing Airport' />
-              <input type='text' placeholder='Airline' />
-            </div>
-            <div className='flight-info'>
-              <input type='time' />
-              <input type='date' />
-            </div>
-          </div>
-          <div className='depart-return'>
-            <div className='airport'>
-              <input type='text' placeholder='Returning Airport' />
-              <input type='text' placeholder='Airline' />
-            </div>
-            <div className='flight-info'>
-              <input type='time' />
-              <input type='date' />
-            </div>
-          </div>
-          <div className='list'>
-            <div>
-              <button className='cancel-button'><Link to='/itenerary'>Cancel</Link></button>
-            </div>
-            <div>
-              <button className='add-button'><Link to='/itenerary'>Add to List</Link></button>
-            </div>
-          </div>
-        </div>
+        <AddLineItem />
         <footer className='flights-footer'>
           <nav>
             <ul>

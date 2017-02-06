@@ -1,0 +1,15 @@
+mutation CreateLineItem (
+  $id: ID!, $type: LINE_ITEM_TYPE!,
+  $cost: Int!, $description: String!,
+  $arriveAt: DateTime, $departAt: DateTime,
+  $additionalInfo: String
+) {
+  createLineItem(
+    tripId: $id, type: $type,
+    cost: $cost, description: $description
+    arriveAt: $arriveAt, departAt: $departAt,
+    additionalInfo: $additionalInfo
+  ) {
+    id
+  }
+}

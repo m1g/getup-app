@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, browserHistory } from 'react-router'
 import InviteFriends from './InviteFriends'
+import LineItemNew from './LineItemNew'
 import ui from '../ui'
 
 import { graphql } from 'react-apollo'
@@ -55,10 +56,7 @@ export default class Itenerary extends Component {
           <ul>
             {this.members()}
           </ul>
-          {/*
-          This will add list items to the itenerary
-          <ul className='itenerary-items'>
-          </ul> */}
+          <LineItemNew />
         </section>
         <footer className='itenerary-footer'>
           <nav>

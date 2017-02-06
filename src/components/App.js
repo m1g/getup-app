@@ -36,13 +36,13 @@ export default class App extends Component {
           <Route path='/' component={Layout}>
             <IndexRoute component={Login} onEnter={this.unAuthed} />
             <Route path='explore' component={Explore} />
-            <Route path='flights' component={Flights} />
-            <Route path='hotels' component={Hotels} />
-            <Route path='extracosts' component={ExtraCosts} />
             <Route path='itenerary' component={IteneraryList} onEnter={this.requireAuth} />
             <Route path='itenerary/:id' component={Itenerary} onEnter={this.requireAuth}>
               <Route path='newItem' component={NewIteneraryItem} />
             </Route>
+            <Route path='itenerary/:id/newItem/flights' component={Flights} />
+            <Route path='itenerary/:id/newItem/hotels' component={Hotels} />
+            <Route path='itenerary/:id/newItem/extracosts' component={ExtraCosts} />
             <Route path='profile' component={Profile} onEnter={this.requireAuth} />
           </Route>
         </Router>
