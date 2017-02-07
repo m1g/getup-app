@@ -13,11 +13,11 @@ class Auth {
       auth: {
         redirectUrl: `${window.location.protocol}//${window.location.host}/`,
         responseType: 'token'
+      },
+      theme: {
+        logo: 'https://github.com/m1g/getup-app/blob/master/src/media/logo.png?raw=true',
+        primaryColor: '#2f383d'
       }
-      // theme: {
-      //   logo: 'https://github.com/m1g/getup-app/blob/master/src/images/logo.png?raw=true',
-      //   primaryColor: '#2f383d'
-      // }
     }
 
     // Re-hydrate session on browser load/reload
