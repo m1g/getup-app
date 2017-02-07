@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+// import AddLineItem from './AddLineItem'
 
 export default class Hotels extends Component {
 
@@ -9,6 +10,7 @@ export default class Hotels extends Component {
         <header className='hotels-header'>
           <h2>Hotels</h2>
         </header>
+        {/* <AddLineItem type='hotel' /> */}
         <div className='hotels-wrapper'>
           <div className='checkout-in'>
             <div className='hotel'>

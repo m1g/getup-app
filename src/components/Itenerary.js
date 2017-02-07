@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, browserHistory } from 'react-router'
 import InviteFriends from './InviteFriends'
-import LineItemNew from './LineItemNew'
+import Time from './Time'
 import ui from '../ui'
 
 import { graphql } from 'react-apollo'
@@ -39,6 +39,53 @@ export default class Itenerary extends Component {
     })
   }
 
+  lineItems () {
+    const { loading, Trip } = this.props.queryTrip
+
+    if (loading) return <li>Loading...</li>
+    return Trip.lineItems.map((lineItem, i) => {
+      switch (lineItem.type) {
+        case 'flight':
+          return <li key={i}>
+            <p>Flight leaves home<Time stamp={lineItem.departAt} /></p>
+            <div>
+              <p>
+                {lineItem.departingAirport}
+              </p>
+              <p>
+                {lineItem.departingAirline}
+              </p>
+              <p>
+                <span>{lineItem.cost}</span>
+              </p>
+            </div>
+            <p>Flight departs destination<Time stamp={lineItem.arriveAt} /></p>
+            <div>
+              <p>
+                {lineItem.arrivingAirport}
+              </p>
+              <p>
+                {lineItem.arrivingAirline}
+              </p>
+              <p>
+                <span>{lineItem.cost}</span>
+              </p>
+            </div>
+          </li>
+        case 'hotel':
+          return <li key={i}>
+            Hotel
+            {lineItem.cost}
+          </li>
+        default:
+          return <li key={i}>
+            additional cost
+            {lineItem.cost}
+          </li>
+      }
+    })
+  }
+
   render () {
     return (
       <div className='itenerary-background'>
@@ -56,7 +103,11 @@ export default class Itenerary extends Component {
           <ul>
             {this.members()}
           </ul>
-          <LineItemNew />
+        </section>
+        <section className='itenerary-line-items'>
+          <ul>
+            {this.lineItems()}
+          </ul>
         </section>
         <footer className='itenerary-footer'>
           <nav>

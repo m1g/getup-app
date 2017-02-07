@@ -38,7 +38,7 @@ export default class IteneraryList extends Component {
     return (
       <div className='itenerary-background'>
         <header className='itenerary-header'>
-          <h2>Itenerary</h2>
+          <h2>Itinerary</h2>
         </header>
         <div className='itenerary-selectors'>
           <button>List of Trips</button>

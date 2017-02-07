@@ -1,31 +1,39 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
+import { browserHistory, withRouter } from 'react-router'
 import ui from '../ui'
 
 import {
-  mutationCreateMembership,
+  mutationCreateLineItem,
   queryUserOwnedTrips
 } from '../graphql'
 
-@graphql(...mutationCreateMembership())
-class InviteFriends extends Component {
+@withRouter
+@graphql(...mutationCreateLineItem())
+class AddLineItem extends Component {
 
   state = {
     newMemberName: '',
     newMemberEmail: ''
   }
 
-  _addMember = (event) => {
+  _addLineItem = (event) => {
     event.preventDefault()
-    this.props.mutationCreateMembership({
+    this.props.mutationCreateLineItem({
       variables: {
-        tripId: this.props.id,
-        name: this.state.newMemberName,
-        email: this.state.newMemberEmail
+        tripId: this.props.params.id,
+        type: this.props.type,
+        cost: Number(this.refs.cost.value),
+        arriveAt: this.refs.arriveAt.value,
+        departAt: this.refs.departAt.value,
+        arrivingAirport: this.refs.arrivingAirport.value,
+        arrivingAirline: this.refs.arrivingAirline.value,
+        departingAirport: this.refs.departingAirport.value,
+        departingAirline: this.refs.departingAirline.value
       },
       refetchQueries: [{ query: queryUserOwnedTrips(false) }]
     }).then(() => {
-      ui.dismissModal()
+      browserHistory.push('/itenerary/' + this.props.params.id)
     })
   }
 
@@ -39,27 +47,25 @@ class InviteFriends extends Component {
         <div className='flights-wrapper'>
           <div className='depart-return'>
             <div className='airport'>
-              <input type='text' placeholder='Departing Airport' />
-              <input type='text' placeholder='Airline' />
+              <input type='text' ref='departingAirport' placeholder='Departing Airport' />
+              <input type='text' ref='departingAirline' placeholder='Airline' />
             </div>
             <div className='flight-info'>
-              <input type='time' />
-              <input type='date' />
+              <input type='datetime-local' ref='departAt' />
             </div>
           </div>
           <div className='depart-return'>
             <div className='airport'>
-              <input type='text' placeholder='Returning Airport' />
-              <input type='text' placeholder='Airline' />
+              <input type='text' ref='arrivingAirport' placeholder='Returning Airport' />
+              <input type='text' ref='arrivingAirline' placeholder='Airline' />
             </div>
             <div className='flight-info'>
-              <input type='time' />
-              <input type='date' />
+              <input type='datetime-local' ref='arriveAt' />
             </div>
           </div>
           <div className='flight-cost'>
             <div>
-              <input type='number' placeholder='Cost' />
+              <input type='number' placeholder='Cost' ref='cost' />
             </div>
           </div>
           <div className='list'>
@@ -67,7 +73,7 @@ class InviteFriends extends Component {
               <button className='cancel-button'>Cancel</button>
             </div>
             <div>
-              <button className='add-button'>Add to List</button>
+              <button className='add-button' onClick={this._addLineItem}>Add to List</button>
             </div>
           </div>
         </div>
@@ -76,4 +82,4 @@ class InviteFriends extends Component {
   }
 }
 
-export default InviteFriends
+export default AddLineItem

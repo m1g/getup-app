@@ -6,5 +6,16 @@ query Trip ($id: ID!) {
       name
       email
     }
+    lineItems {
+      id
+      type
+      arrivingAirline
+      arrivingAirport
+      arriveAt
+      departingAirline
+      departingAirport
+      departAt
+      cost
+    }
   }
 }

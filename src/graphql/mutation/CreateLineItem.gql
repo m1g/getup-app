@@ -1,14 +1,20 @@
 mutation CreateLineItem (
-  $id: ID!, $type: LINE_ITEM_TYPE!,
-  $cost: Int!, $description: String!,
+  $tripId: ID!, $type: String!,
+  $cost: Int!, $description: String,
   $arriveAt: DateTime, $departAt: DateTime,
-  $additionalInfo: String
+  $arrivingAirport: String!,
+  $arrivingAirline: String!,
+  $departingAirport: String!,
+  $departingAirline: String!
 ) {
   createLineItem(
-    tripId: $id, type: $type,
+    tripId: $tripId, type: $type,
     cost: $cost, description: $description
     arriveAt: $arriveAt, departAt: $departAt,
-    additionalInfo: $additionalInfo
+    arrivingAirline: $arrivingAirline,
+    arrivingAirport: $arrivingAirport,
+    departingAirline: $departingAirline,
+    departingAirport: $departingAirport
   ) {
     id
   }

@@ -10,7 +10,7 @@ export default class Flights extends Component {
         <header className='flights-header'>
           <h2>Flights</h2>
         </header>
-        <AddLineItem />
+        <AddLineItem type='flight' />
         <footer className='flights-footer'>
           <nav>
             <ul>
