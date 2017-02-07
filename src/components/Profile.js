@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import SessionButton from './SessionButton'
+import withAuth from '../utils/withAuth'
 
+@withAuth
 export default class Profile extends Component {
 
   render () {
@@ -11,10 +13,10 @@ export default class Profile extends Component {
           <h2>Profile</h2>
         </header>
         <section>
-          <img src='https://avatars.githubusercontent.com/u/8049663?v=3' alt='' />
+          <img src={this.props.auth.profile.picture_large} height={150} width={150} alt='' />
           <ul>
-            <li><h3>avatar name</h3></li>
-            <li>email: @personemail.com</li>
+            <li><h3>{this.props.auth.profile.name}</h3></li>
+            <li>{this.props.auth.profile.email}</li>
           </ul>
         </section>
         <div className='profile-btn'>
