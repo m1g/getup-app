@@ -5,7 +5,8 @@ import ui from '../ui'
 
 import {
   mutationCreateLineItem,
-  queryUserOwnedTrips
+  queryUserOwnedTrips,
+  queryTrip
 } from '../graphql'
 
 @withRouter
@@ -31,7 +32,10 @@ class AddLineItem extends Component {
         departingAirport: this.refs.departingAirport.value,
         departingAirline: this.refs.departingAirline.value
       },
-      refetchQueries: [{ query: queryUserOwnedTrips(false) }]
+      refetchQueries: [
+        { query: queryUserOwnedTrips(false) },
+        { query: queryTrip(false), variables: { id: this.props.params.id } }
+      ]
     }).then(() => {
       browserHistory.push('/itenerary/' + this.props.params.id)
     })
