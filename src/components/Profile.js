@@ -6,6 +6,14 @@ import withAuth from '../utils/withAuth'
 @withAuth
 export default class Profile extends Component {
 
+  // profilePic () {
+  //   if (this.props.auth.profile.picture_large === undefined) {
+  //     return this.props.auth.profile.picture
+  //   } else {
+  //     return this.props.auth.profile.picture_large
+  //   }
+  // }
+
   render () {
     return (
       <div className='profile-background'>
@@ -27,7 +35,7 @@ export default class Profile extends Component {
             <ul>
               <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' /></Link></li>
               <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
-              <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link activeClassName='is-active' to='/profile' onlyActiveOnIndex><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
             </ul>
           </nav>
         </footer>

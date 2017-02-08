@@ -55,7 +55,7 @@ export default class IteneraryList extends Component {
           <nav>
             <ul>
               <li><Link to='/explore'><i className='fa fa-compass fa-2x' aria-hidden='true' /></Link></li>
-              <li><Link to='/itenerary'><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
+              <li><Link activeClassName='is-active' to='/itenerary' onlyActiveOnIndex><i className='fa fa-suitcase fa-2x' aria-hidden='true' /></Link></li>
               <li><Link to='/profile'><i className='fa fa-user fa-2x' aria-hidden='true' /></Link></li>
             </ul>
           </nav>

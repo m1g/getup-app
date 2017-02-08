@@ -13,7 +13,7 @@ class Modal extends Component {
         <div className='inner'>
           <header>
             <button className='close-button' onClick={this._dismiss}>
-              <i className='fa fa-times fa-2x' aria-hidden='true' />
+              <i className='fa fa-times' aria-hidden='true' />
             </button>
           </header>
           <div className='content'>

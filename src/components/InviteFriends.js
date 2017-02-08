@@ -37,7 +37,7 @@ class InviteFriends extends Component {
     return (
       <div>
         <form onSubmit={this._addMember}>
-          <h3>Add a Friend</h3>
+          <h3>Invite a Friend</h3>
           <input
             type='text'
             value={this.state.newMemberName}

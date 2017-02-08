@@ -16,7 +16,8 @@ class Auth {
       },
       theme: {
         logo: 'https://github.com/m1g/getup-app/blob/master/src/media/logo.png?raw=true',
-        primaryColor: '#2f383d'
+        primaryColor: '#2f383d',
+        title: 'Log me in'
       }
     }
 
